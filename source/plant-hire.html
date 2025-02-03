@@ -1,0 +1,153 @@
+@@include('header.htm') @@include('blocks/navigation-1.htm')
+
+<style>
+  .banner-carousel-item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .slider-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .plant-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .plant-item img {
+    width: 100%;
+    border-radius: 50px; /* Smooth edges */
+    border: 5px solid;
+    border-color: #75b555;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .plant-item:hover img {
+    transform: translateY(-5px); /* Lifts the image slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a soft glow */
+  }
+
+  .plant-name {
+    padding-top: 20px;
+  }
+</style>
+
+<div
+  class="banner-carousel-item"
+  style="background-image: url(images/slider-main/bg4.png)"
+>
+  <div class="slider-content">
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12 text-center">
+          <h3 class="slide-sub-title" data-animation-in="slideInRight">
+            Plant Hire
+          </h3>
+          <h2 class="slide-title" data-animation-in="slideInLeft">
+            Reliable & Well-Maintained Equipment for Your Construction &
+            Agricultural Needs
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="plant-hire-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/tlb.jpg" alt="TLB Digger Loader" />
+          <h3 class="plant-name">TLB Digger Loader</h3>
+          <p>
+            Versatile and powerful, perfect for excavation and loading tasks.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/skidsteer.jpg" alt="Skidsteer | BOBCAT" />
+          <h3 class="plant-name">Skidsteer | BOBCAT</h3>
+          <p>Compact and highly maneuverable, ideal for tight spaces.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/6m.jpg" alt="6m Tipper Truck" />
+          <h3 class="plant-name">6m Tipper Truck</h3>
+          <p>
+            Efficient for transporting bulk materials on construction sites.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/10m.png" alt="10m Tipper Truck" />
+          <h3 class="plant-name">10m Tipper Truck</h3>
+          <p>
+            Heavy-duty hauling for large-scale construction and earthmoving
+            projects.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/watertruck.png" alt="5500l Watertruck 4x4" />
+          <h3 class="plant-name">5500l Watertruck 4x4</h3>
+          <p>Reliable for dust suppression and water transport.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/flatbed.jpg" alt="8 Ton Flatbed Truck" />
+          <h3 class="plant-name">8 Ton Flatbed Truck</h3>
+          <p>Ideal for transporting construction materials and equipment.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/crane.png" alt="Crane Truck" />
+          <h3 class="plant-name">Crane Truck</h3>
+          <p>Perfect for lifting and transporting heavy loads.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/skips.jpg" alt="Skips" />
+          <h3 class="plant-name">Skips</h3>
+          <p>Efficient waste management solutions for construction sites.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <img src="./images/plant/excavator.jpg" alt="Excavator" />
+          <h3 class="plant-name">Excavator</h3>
+          <p>
+            Powerful excavation and earth-moving equipment for construction and
+            site preparation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm')

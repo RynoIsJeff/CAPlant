@@ -1,0 +1,220 @@
+<style>
+  .banner-carousel-item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .slider-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  /* Adjusting layout for text and image */
+  #ts-about .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0; /* Remove any bottom margin */
+  }
+
+  #ts-about .col-lg-6 {
+    padding: 10px;
+  }
+
+  #ts-about .col-lg-6 img {
+    max-width: 100%; /* Ensures the image is responsive */
+    height: auto;
+  }
+
+  .ts-values {
+    padding-top: 0px;
+  }
+
+  /* Styling the Values section */
+  .ts-values .row {
+    margin-top: 0; /* Ensure no large top margin */
+    padding-top: 0px; /* Add some padding if needed */
+  }
+
+  .ts-values .ts-value-box {
+    margin-bottom: 30px; /* Adjust the space between items */
+  }
+
+  /* Adjust the large gap before 'Our Values' */
+  #ts-about {
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .call-to-action-box {
+    padding-top: 20px;
+    padding-bottom: 50px;
+  }
+
+  /* Add responsiveness to adjust layout for small screens */
+  @media (max-width: 768px) {
+    #ts-about .row {
+      flex-direction: column;
+    }
+
+    #ts-about .col-lg-6 img {
+      max-height: 250px; /* Decrease image size on smaller screens */
+      object-fit: cover; /* Ensure the image looks good */
+    }
+  }
+
+  .info-subtitle {
+    padding-bottom: 10px;
+  }
+
+  .img-fluid {
+    width: 100%;
+    border-radius: 50px; /* Smooth edges */
+    border: 5px solid;
+    border-color: #75b555;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .img-fluid:hover {
+    transform: translateY(-5px); /* Lifts the image slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a soft glow */
+  }
+</style>
+
+<!-- HTML -->
+@@include('header.htm') @@include('blocks/navigation-1.htm')
+
+<div
+  class="banner-carousel-item"
+  style="background-image: url(images/slider-main/bg7.png)"
+>
+  <div class="slider-content">
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12 text-center">
+          <h3 class="slide-sub-title" data-animation-in="slideInRight">
+            About Civils Agri Plant
+          </h3>
+          <h2 class="slide-title" data-animation-in="slideInLeft">
+            Your Trusted Partner in Construction & Agriculture
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section id="ts-about" class="ts-about">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="into-title">Who We Are</h2>
+        <p>
+          Civils Agri Plant provides top-quality earthmoving, excavation, and
+          material supply services across the Western Cape. Based in Paarl, we
+          serve both the construction and agricultural sectors with reliability
+          and efficiency.
+        </p>
+        <h3 class="into-sub-title">Why Choose Us?</h3>
+        <ul class="list-arrow">
+          <li>High-quality materials and equipment</li>
+          <li>Experienced and professional team</li>
+          <li>Reliable and timely service</li>
+          <li>Customer-centric approach</li>
+        </ul>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img
+          loading="lazy"
+          class="img-fluid"
+          src="images/about/staff.png"
+          alt="About Civils Agri Plant"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ts-values" class="ts-values">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h3 class="into-sub-title">Our Values</h3>
+        <p>
+          We are committed to delivering excellence with integrity, safety, and
+          customer satisfaction at the core of our operations.
+        </p>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="ts-value-box">
+          <img
+            loading="lazy"
+            src="images/about/about-icon1.png"
+            alt="Safety Icon"
+          />
+          <h4>Safety</h4>
+          <p>
+            We prioritize safety in all our operations to protect employees,
+            clients, and communities.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ts-value-box">
+          <img
+            loading="lazy"
+            src="images/about/about-icon2.png"
+            alt="Customer Service Icon"
+          />
+          <h4>Customer Service</h4>
+          <p>
+            Ensuring top-quality service and customer satisfaction in every
+            project.
+          </p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="ts-value-box">
+          <img
+            loading="lazy"
+            src="images/about/about-icon3.png"
+            alt="Integrity Icon"
+          />
+          <h4>Integrity</h4>
+          <p>
+            We operate with honesty and transparency, ensuring ethical business
+            practices.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="call-to-action-box no-padding">
+  <div class="container">
+    <div class="action-style-box">
+      <div class="row align-items-center">
+        <div class="col-md-8 text-center text-md-left">
+          <div class="call-to-action-text">
+            <h3 class="action-title">Let’s Build Together</h3>
+          </div>
+        </div>
+        <div class="col-md-4 text-center text-md-right mt-3 mt-md-0">
+          <div class="call-to-action-btn">
+            <a class="btn btn-dark" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm')
