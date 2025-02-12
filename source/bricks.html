@@ -1,0 +1,103 @@
+@@include('header.htm') @@include('blocks/navigation-1.htm')
+
+<style>
+  .banner-carousel-item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .slider-content {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .plant-item {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .plant-item img {
+    width: 100%;
+    border-radius: 50px; /* Smooth edges */
+    border: 5px solid;
+    border-color: #75b555;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .plant-item:hover img {
+    transform: translateY(-5px); /* Lifts the image slightly */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Adds a soft glow */
+  }
+
+  .plant-name {
+    padding-top: 20px;
+  }
+</style>
+
+<div
+  class="banner-carousel-item"
+  style="background-image: url(images/slider-main/bg6.png)"
+>
+  <div class="slider-content">
+    <div class="container h-100">
+      <div class="row align-items-center h-100">
+        <div class="col-md-12 text-center">
+          <h3 class="slide-sub-title" data-animation-in="slideInRight">
+            Bricks
+          </h3>
+          <h2 class="slide-title" data-animation-in="slideInLeft">
+            High-Quality Bricks for Every Construction Need
+          </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="brick-specs-download text-center my-4">
+  <a href="https://drive.google.com/file/d/1cjQh8NXaviyLKi9LLkZjDc60BcIEUlWl/view?usp=sharing" target="_blank" download class="btn btn-success">
+    Download our brick specifications PDF
+  </a>
+</section>
+
+<section class="plant-hire-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="plant-item">
+          <h3 class="plant-name">Plaster Bricks</h3>
+          <p>
+            Durable and smooth, perfect for plastered walls and general
+            construction.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <h3 class="plant-name">Paving Bricks</h3>
+          <p>Strong and stylish, ideal for driveways, pathways, and patios.</p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="plant-item">
+          <h3 class="plant-name">Face Bricks</h3>
+          <p>
+            Attractive and weather-resistant, suitable for exterior and interior
+            walls.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+@@include('footer.htm')
