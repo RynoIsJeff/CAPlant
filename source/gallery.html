@@ -1,0 +1,72 @@
+@@include('header.htm') @@include('blocks/navigation-1.htm')
+
+<section>
+  <div
+    class="banner-carousel-item"
+    style="background-image: url(images/slider-main/bg9.png)"
+  >
+    <div class="slider-content">
+      <div class="container h-100">
+        <div class="row align-items-center h-100">
+          <div class="col-md-12 text-center">
+            <h3 class="slide-sub-title" data-animation-in="slideInRight">
+              Our Gallery
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <div id="gallery-grid" class="row"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let galleryHTML = "";
+    for (let i = 1; i <= 29; i++) {
+      galleryHTML += `
+        <div class="col-md-4 mb-4">
+          <div class="plant-item">
+            <img src="images/gallery/image${i}.jpg" class="img-fluid" alt="Gallery Image ${i}">
+          </div>
+        </div>
+      `;
+    }
+    document.getElementById("gallery-grid").innerHTML = galleryHTML;
+  });
+</script>
+
+<style>
+  .gallery-section {
+    padding: 50px 0;
+  }
+  .plant-item img {
+    width: 100%;
+    border-radius: 50px;
+    border: 5px solid #75b555;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .plant-item:hover img {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  .banner-carousel-item {
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  .slider-content {
+    width: 100%;
+    padding: 20px;
+  }
+</style>
+
+@@include('footer.htm')
