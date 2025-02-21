@@ -1,0 +1,15 @@
+{
+    "redirects": [
+      {
+        "source": "/404",
+        "destination": "/",
+        "statusCode": 308
+      },
+      {
+        "source": "/*",
+        "destination": "/",
+        "statusCode": 308
+      }
+    ]
+  }
+  
