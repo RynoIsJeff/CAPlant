@@ -6,7 +6,7 @@
         "statusCode": 308
       },
       {
-        "source": "/*",
+        "source": "/:path*",
         "destination": "/",
         "statusCode": 308
       }
