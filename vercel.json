@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "installCommand": "npm install --loglevel error",
   "buildCommand": "NODE_OPTIONS=--no-deprecation npm run build:prod",
   "outputDirectory": "theme",
   "env": { "NODE_OPTIONS": "--no-deprecation" },
