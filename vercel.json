@@ -1,6 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "npm run build:prod",
+  "buildCommand": "NODE_OPTIONS=--no-deprecation npm run build:prod",
   "outputDirectory": "theme",
   "env": { "NODE_OPTIONS": "--no-deprecation" },
   "headers": [
