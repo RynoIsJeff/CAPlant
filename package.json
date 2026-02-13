@@ -4,6 +4,7 @@
   "description": "Civils Agri Plant Website",
   "author": "Ultimate Marketing Smash",
   "license": "MIT",
+  "engines": { "node": ">=18.0.0" },
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
