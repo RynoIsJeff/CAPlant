@@ -1,8 +1,15 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 /* Button */
 .btn {
-  &:active,
-  &:focus {
+  &:active {
       box-shadow: none !important;
+  }
+  &:focus-visible {
+      outline: 2px solid $color-primary;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 3px rgba(117, 181, 85, 0.3);
   }
 }
 .btn-primary,
@@ -14,7 +21,7 @@
   text-transform: uppercase;
   color: #fff;
   font-family: $font-secondary;
-  transition: 350ms;
+  transition: $transition-fast;
   font-size: 14px;
   @include tablet {
       font-size: 13px;
@@ -23,11 +30,11 @@
 
 .btn-white.btn-primary {
   background: #fff;
-  color: #75b555;
+  color: $color-primary;
 }
 
 .btn-primary {
-  background: #75b555;
+  background: $color-primary;
 }
 
 .btn-dark {

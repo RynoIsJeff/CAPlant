@@ -4,7 +4,7 @@
         <div class="row justify-content-between">
           <div class="col-lg-4 col-md-6 footer-widget footer-about">
             <h3 class="widget-title">About Us</h3>
-            <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo.png" alt="Constra">
+            <img loading="lazy" width="200px" class="footer-logo" src="images/footer-logo.png" alt="Civils Agri Plant">
             <p>Civils Agri Plant is dedicated to delivering high-quality construction and agricultural solutions with a commitment to excellence and customer satisfaction.</p>
             <div class="footer-social">
               <ul>
@@ -51,8 +51,6 @@
             <div class="footer-menu text-center text-md-right">
               <ul class="list-unstyled">
                 <li><a href="about.html">About</a></li>
-                <li><a href="terms-conditions.html">Terms & Conditions</a></li>
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
               </ul>
             </div>
           </div>
@@ -73,14 +71,14 @@
   ================================================== -->
 
   <!-- initialize jQuery Library -->
-  <script src="plugins/jQuery/jquery.min.js"></script>
+  <script src="plugins/jQuery/jquery.min.js" defer></script>
   <!-- Bootstrap jQuery -->
   <script src="plugins/bootstrap/bootstrap.min.js" defer></script>
   <!-- Slick Carousel -->
-  <script src="plugins/slick/slick.min.js"></script>
-  <script src="plugins/slick/slick-animation.min.js"></script>
+  <script src="plugins/slick/slick.min.js" defer></script>
+  <script src="plugins/slick/slick-animation.min.js" defer></script>
   <!-- Color box -->
-  <script src="plugins/colorbox/jquery.colorbox.js"></script>
+  <script src="plugins/colorbox/jquery.colorbox.js" defer></script>
   <!-- shuffle -->
   <script src="plugins/shuffle/shuffle.min.js" defer></script>
 
@@ -89,7 +87,22 @@
   <!-- Google Map Plugin-->
 
   <!-- Template custom -->
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('/sw.js')
+          .then(function(registration) {
+            console.log('ServiceWorker registration successful');
+          })
+          .catch(function(err) {
+            console.log('ServiceWorker registration failed: ', err);
+          });
+      });
+    }
+  </script>
 
   </div><!-- Body inner end -->
   </body>

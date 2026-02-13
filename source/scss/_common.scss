@@ -1,3 +1,6 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
 /* Global styles
 ================================================== */
 
@@ -11,7 +14,6 @@ html {
 }
 
 body {
-  border: 0;
   margin: 0;
   padding: 0;
 }
@@ -24,8 +26,8 @@ body {
 .preload {
   position: fixed;
   background: #fff url(../images/preload.gif) center center no-repeat;
-  left: 0px;
-  top: 0px;
+  left: 0;
+  top: 0;
   width: 100%;
   height: 100%;
   z-index: 99999;
@@ -38,7 +40,7 @@ a:visited {
 
 a {
   color: inherit;
-  transition: .2s ease;
+  transition: $transition-fast;
 }
 
 a:hover {
@@ -47,7 +49,7 @@ a:hover {
 }
 
 a.read-more {
-  color: #75b555;
+  color: $color-primary;
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -103,8 +105,31 @@ section,
   padding-bottom: 0;
 }
 
-a:focus {
-  outline: 0;
+/* Accessibility: Focus styles */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
+}
+
+a:focus:not(:focus-visible),
+button:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible),
+select:focus:not(:focus-visible) {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid $color-primary;
+  outline-offset: 2px;
 }
 
 .ts-padding {
@@ -136,21 +161,6 @@ a:focus {
 .bg-overlay .container {
   position: relative;
   z-index: 1;
-}
-
-.bg-overlay:after {
-  background-color: rgba(0, 46, 91, 0.8);
-  z-index: 0;
-  position: absolute;
-  content: '';
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-}
-
-.bg-overlay:after {
-  position: relative;
 }
 
 .bg-overlay:after {
@@ -188,7 +198,7 @@ a:focus {
 }
 
 .dropcap.primary {
-  background: #75b555;
+  background: $color-primary;
   color: #fff;
 }
 
@@ -283,7 +293,7 @@ a:focus {
 
 .form-control:focus {
   box-shadow: none;
-  border: 1px solid #75b555;
+  border: 1px solid $color-primary;
 }
 
 hr {
@@ -377,7 +387,7 @@ cite {
   font-family: "Font Awesome 5 Free";
   content: "\f138";
   margin-right: 10px;
-  color: #75b555;
+  color: $color-primary;
   font-size: 12px;
 }
 
@@ -389,7 +399,7 @@ ul.list-arrow li:before {
   font-family: "Font Awesome 5 Free";
   content: "\f105";
   margin-right: 10px;
-  color: #75b555;
+  color: $color-primary;
   font-size: 16px;
   font-weight: bold;
 }
@@ -398,7 +408,7 @@ ul.list-check li:before {
   font-family: "Font Awesome 5 Free";
   content: "\f00c";
   margin-right: 10px;
-  color: #75b555;
+  color: $color-primary;
   font-size: 14px;
 }
 
@@ -415,10 +425,6 @@ ul.list-check li:before {
 .nav>li>a:focus,
 .nav>li>a:hover {
   background: none;
-}
-
-.pattern-bg {
-  background: #f5f5f5 url(../images/crossword.png);
 }
 
 a[href^=tel] {

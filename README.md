@@ -1,124 +1,123 @@
-# Constra - Free bootstrap construction template
+# Civils Agri Plant Website
 
-Constra is a theme for professional builders, construction or even industrial production companies with a focus on presenting the team, current and recent projects. Responsive development of the layouts makes the theme look good on any modern device.
+Website for Civils Agri Plant, a construction and agricultural company based in Paarl, Western Cape, South Africa. The site showcases services including plant hire, sand & stone supply, bricks, and features a gallery of completed projects.
 
-<!-- demo -->
-## Example Site
-
-| [![](screenshots/homepage-1.png)](https://demo.themefisher.com/constra/) | [![](screenshots/homepage-2.png)](https://demo.themefisher.com/constra/index-2.html) | [![](screenshots/about.png)](https://demo.themefisher.com/constra/about.html) |
-|:---:|:---:|:---:|
-| **Homepage 1**  | **Homepage 2**  | **About**  |
-| [![](screenshots/service.png)](https://demo.themefisher.com/constra/services.html) | [![](screenshots/project.png)](https://demo.themefisher.com/constra/projects.html) | [![](screenshots/news.png)](https://demo.themefisher.com/constra/news-right-sidebar.html) |
-| **Service** | **Project** | **News** |
-
-👉🏻[View Live Preview](https://demo.themefisher.com/constra/)
-
-<!-- resources -->
 ## Pages
 
-* **Homepage 1**
-* **Homepage 2**
-* **About**
-* **Services**
-* **Service Details**
-* **Projects**
-* **Projects Details**
-* **Pricing**
-* **Team**
-* **Testimonials**
-* **News Left Sidebar**
-* **News Right Sidebar**
-* **News Details**
-* **FAQ**
-* **404**
-* **Typography**
-* **Contact**
+* **Home** (index.html)
+* **Plant Hire**
+* **Sand & Stone**
+* **Bricks**
+* **Gallery**
+* **About Us**
+* **Contact Us**
+* **404** (Error page)
 
-<!-- download -->
-## Download And installation
+## Setup & development
 
-Download this template from [Github](https://github.com/themefisher/constra/archive/main.zip)
+### Basic usage
 
-<!-- installation -->
-### Basic Usages
+Edit the HTML and CSS in the `theme` folder and open `theme/index.html` in a browser to preview.
 
-After downloading the template, you can simply edit the HTML and CSS files from the `theme` folder. To preview the changes you make to the code, you can open the index.html file in your web browser.
+### Advanced usage (Gulp)
 
-### Advanced Usage
+#### Prerequisites
 
-For advanced usage, you have some prerequisites to install. Then you can run it on your localhost. You can view the package.json file to see which scripts are included.
-
-#### Install prerequisites (once for a machine)
-
-* **Node Installation:** [Install node js](https://nodejs.org/en/download/)
-* **Gulp Installation:** Install gulp globally from your terminal
+* **Node:** [Install Node.js](https://nodejs.org/en/download/)
+* **Gulp:** Install globally:
 
 ```
 npm install --global gulp-cli
 ```
 
-Or visit the original [Gulp docs](https://gulpjs.com/docs/en/getting-started/quick-start)
+See [Gulp docs](https://gulpjs.com/docs/en/getting-started/quick-start) for more.
 
 #### Local setup
 
-After successfully installing those dependencies, open this theme with any IDE [[VS Code](https://code.visualstudio.com/) recommended], and then open the internal terminal of IDM [vs code shortcut <code>ctrl/cmd+\`</code>]
+1. Open the project in an editor (e.g. [VS Code](https://code.visualstudio.com/)).
+2. In the project terminal:
 
-* Install dependencies
-
-```
+```bash
 npm install
-```
-
-* Run locally
-
-```
 npm run dev
 ```
 
-After that, it will open up a preview of the template in your default browser, watch for changes to source files, and live reload the browser when changes are saved.
+This runs a local preview with live reload when source files change.
 
-#### Production Build
+#### Build commands
 
-After finishing all the customization, you can create a production build by running this command.
-
-```
+**Development build:**
+```bash
 npm run build
 ```
 
-Now you get a `theme` folder that has all the changes you have made. you can use this folder as your main theme.
+**Production build (with minification and optimization):**
+```bash
+npm run build:prod
+```
 
-👉🏻 [visit documentation](https://docs.themefisher.com/constra/)
+**Code quality:**
+```bash
+npm run lint      # Check JavaScript for errors
+npm run format    # Format code with Prettier
+```
 
-<!-- reporting issue -->
-## Reporting Issues
+The `theme` folder will contain the built site ready for deployment.
 
-We use GitHub Issues as the official bug tracker for the Constra Template. Please Search [existing issues](https://github.com/themefisher/Constra-Bootstrap-Construction-Template/issues). It’s possible someone has already reported the same problem.
-If your problem or idea has not been addressed yet, feel free to [open a new issue](https://github.com/themefisher/Constra-Bootstrap-Construction-Template/issues).
+## Deployment
 
-<!-- support -->
-## Technical Support or Questions (Paid)
+### Vercel
 
-If you have questions or need help integrating the product please [contact us](mailto:mehedi@themefisher.com) instead of opening an issue.
+The project includes a `vercel.json` configuration file. To deploy:
 
-<!-- licence -->
+1. Push your code to a Git repository (GitHub, GitLab, etc.)
+2. Import the project in [Vercel](https://vercel.com)
+3. Vercel will automatically detect the configuration and deploy
+
+The `theme` folder will be served as the root directory.
+
+### Netlify
+
+If deploying to Netlify, ensure your build command is `npm run build` and publish directory is `theme`.
+
+### Manual Deployment
+
+After running `npm run build`, upload the contents of the `theme` folder to your web server.
+
+## Reporting issues
+
+Use this repository's [GitHub Issues](https://github.com/) for bugs or feature requests.
+
 ## License
 
-Copyright (c) 2016 - Present, Designed & Developed by [Themefisher](https://themefisher.com)
+**Code:** MIT (see [LICENSE](LICENSE)).
 
-**Code License:** Released under the [MIT](https://github.com/themefisher/constra/blob/main/LICENSE) license.
+**Images:** For demonstration only; see their respective licenses.
 
-**Image license:** The images are only for demonstration purposes. They have their license, we don't have permission to share those images.
+## Credits
 
-<!-- resources -->
+Website designed and developed by [Ultimate Marketing Smash](https://ultimatemarketingsmash.com).
+
+## Features
+
+* **SEO Optimized**: Meta tags, Open Graph, Twitter Cards, structured data (JSON-LD)
+* **Accessible**: WCAG compliant with proper ARIA labels, focus styles, and skip links
+* **Performance**: Minified assets, image optimization, service worker for caching
+* **Security**: Security headers, XSS protection, content security policies
+* **Progressive Web App**: Service worker for offline functionality
+* **Form Validation**: Client-side validation with accessible error messages
+* **Responsive**: Mobile-first design that works on all devices
+
 ## Resources
 
-Some third-party plugins that we used to build this template. Please check their licenses.
+Third-party libraries used in this project:
 
 * **Bootstrap v4.5**: <https://getbootstrap.com/docs/4.5/getting-started/introduction/>
-* **Jquery v3.5.1**: <https://jquery.com/download/>
+* **jQuery v3.5.1**: <https://jquery.com/download/>
 * **Google Fonts**: <http://fonts.google.com/>
 * **Font Awesome Free**: <https://fontawesome.com/>
 * **Animate CSS**: <https://animate.style/>
 * **Colorbox**: <https://www.jacklmoore.com/colorbox/>
 * **Slick**: <https://kenwheeler.github.io/slick/>
 * **Shuffle**: <https://vestride.github.io/Shuffle/>
+* **Leaflet**: <https://leafletjs.com/> (for maps)

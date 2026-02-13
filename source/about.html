@@ -87,7 +87,18 @@
 </style>
 
 <!-- HTML -->
-@@include('header.htm') @@include('blocks/navigation-1.htm')
+@@include('header.htm')
+<!-- Page-specific meta tags -->
+<meta name="description" content="Learn about Civils Agri Plant - your trusted partner for construction materials, plant hire, and agricultural services in Paarl, Western Cape. Quality service since establishment." />
+<link rel="canonical" href="https://caplant.co.za/about.html" />
+<meta property="og:url" content="https://caplant.co.za/about.html" />
+<meta property="og:title" content="About Us - Civils Agri Plant" />
+<meta property="og:description" content="Learn about Civils Agri Plant - your trusted partner for construction materials, plant hire, and agricultural services in Paarl, Western Cape." />
+<meta name="twitter:url" content="https://caplant.co.za/about.html" />
+<meta name="twitter:title" content="About Us - Civils Agri Plant" />
+<meta name="twitter:description" content="Learn about Civils Agri Plant - your trusted partner for construction materials, plant hire, and agricultural services." />
+@@include('blocks/navigation-1.htm')
+@@include('structured-data.htm')
 
 <div
   class="banner-carousel-item"
@@ -109,7 +120,7 @@
   </div>
 </div>
 
-<section id="ts-about" class="ts-about">
+<section id="ts-about" class="ts-about" role="main" aria-label="Main content">
   <div class="container">
     <div class="row">
       <div class="col-lg-6">

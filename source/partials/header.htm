@@ -1,18 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
   <head>
     <meta charset="utf-8" />
-    <title>Civils Agri Plant</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="description" content="CAPlant located in Paarl" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
-    <meta name="author" content="Themefisher" />
-    <meta name="generator" content="Themefisher Constra HTML Template v1.0" />
-
+    
+    <!-- Primary Meta Tags -->
+    <title>Civils Agri Plant - Construction & Agricultural Services in Paarl, Western Cape</title>
+    <meta name="title" content="Civils Agri Plant - Construction & Agricultural Services in Paarl, Western Cape" />
+    <meta name="description" content="Civils Agri Plant provides quality construction materials, plant hire, sand & stone, and bricks in Paarl, Western Cape. Professional earthmoving and agricultural services." />
+    <meta name="keywords" content="construction materials, plant hire, sand and stone, bricks, earthmoving, Paarl, Western Cape, South Africa" />
+    <meta name="author" content="Civils Agri Plant" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="ZA-WC" />
+    <meta name="geo.placename" content="Paarl" />
+    <meta name="geo.position" content="-33.7342;18.9752" />
+    
+    <!-- Canonical URL (will be overridden per page) -->
+    <link rel="canonical" href="https://caplant.co.za/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://caplant.co.za/" />
+    <meta property="og:title" content="Civils Agri Plant - Construction & Agricultural Services" />
+    <meta property="og:description" content="Quality construction materials, plant hire, sand & stone, and bricks in Paarl, Western Cape. Professional earthmoving and agricultural services." />
+    <meta property="og:image" content="https://caplant.co.za/images/logo.png" />
+    <meta property="og:site_name" content="Civils Agri Plant" />
+    <meta property="og:locale" content="en_ZA" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://caplant.co.za/" />
+    <meta name="twitter:title" content="Civils Agri Plant - Construction & Agricultural Services" />
+    <meta name="twitter:description" content="Quality construction materials, plant hire, sand & stone, and bricks in Paarl, Western Cape." />
+    <meta name="twitter:image" content="https://caplant.co.za/images/logo.png" />
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#75b555" />
+    <meta name="msapplication-TileColor" content="#75b555" />
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    
+    <!-- Stylesheets -->
+    <link rel="preload" href="plugins/bootstrap/bootstrap.min.css" as="style" />
     <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="plugins/fontawesome/css/all.min.css" />
     <link rel="stylesheet" href="plugins/animate-css/animate.css" />
@@ -26,38 +71,13 @@
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <style>
-      /* Address link styling */
-      .info-text a {
-        text-decoration: none;
-        color: inherit;
-        display: flex;
-        align-items: center;
-        transition: color 0.3s ease-in-out;
-      }
-
-      .info-text a i {
-        margin-right: 8px;
-        transition: color 0.3s ease-in-out;
-      }
-
-      .info-text a:hover,
-      .info-text a:hover i {
-        color: #75b555;
-      }
-
-      /* Social Media Icons */
-      .top-social ul {
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-      }
-    </style>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" defer></script>
   </head>
   <body>
     <div class="body-inner">
+      <!-- Skip to content link for accessibility -->
+      <a href="#main-container" class="skip-to-content">Skip to main content</a>
+      
       <div id="top-bar" class="top-bar">
         <div class="container">
           <div class="row">
@@ -69,9 +89,10 @@
                       href="https://www.google.com/maps/search/?api=1&query=De+Hoop+Brickfields+(Upper+Daljosaphat+Road),+Paarl,+Western+Cape,+South+Africa"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="View Civils Agri Plant location on Google Maps"
                     >
-                      <i class="fas fa-map-marker-alt"></i>
-                      Civils Agri Plant office, De hoop steen road , Paarl,
+                      <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                      Civils Agri Plant office, De hoop steen road, Paarl,
                       Western Cape, South Africa
                     </a>
                   </p>
@@ -85,16 +106,22 @@
                   <a
                     title="Facebook"
                     href="https://www.facebook.com/Civilsagriplant/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit our Facebook page"
                   >
-                    <span class="social-icon"
+                    <span class="social-icon" aria-hidden="true"
                       ><i class="fab fa-facebook-f"></i
                     ></span>
                   </a>
                   <a
                     title="Instagram"
                     href="https://www.instagram.com/civils_agri_plant_/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Visit our Instagram page"
                   >
-                    <span class="social-icon"
+                    <span class="social-icon" aria-hidden="true"
                       ><i class="fab fa-instagram"></i
                     ></span>
                   </a>
@@ -105,5 +132,3 @@
         </div>
       </div>
     </div>
-  </body>
-</html>

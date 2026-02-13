@@ -1,6 +1,17 @@
-@@include('header.htm') @@include('blocks/navigation-1.htm')
+@@include('header.htm')
+<!-- Page-specific meta tags -->
+<meta name="description" content="View our gallery of completed projects - construction materials, plant hire, and earthmoving services in Paarl, Western Cape. Civils Agri Plant portfolio." />
+<link rel="canonical" href="https://caplant.co.za/gallery.html" />
+<meta property="og:url" content="https://caplant.co.za/gallery.html" />
+<meta property="og:title" content="Project Gallery - Civils Agri Plant" />
+<meta property="og:description" content="View our gallery of completed projects - construction materials, plant hire, and earthmoving services in Paarl, Western Cape." />
+<meta name="twitter:url" content="https://caplant.co.za/gallery.html" />
+<meta name="twitter:title" content="Project Gallery - Civils Agri Plant" />
+<meta name="twitter:description" content="View our gallery of completed projects - construction materials, plant hire, and earthmoving services." />
+@@include('blocks/navigation-1.htm')
+@@include('structured-data.htm')
 
-<section>
+<section role="main" aria-label="Main content">
   <div
     class="banner-carousel-item"
     style="background-image: url(images/slider-main/bg9.png)"
@@ -26,7 +37,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     let galleryHTML = "";
-    for (let i = 1; i <= 29; i++) {
+    for (let i = 1; i <= 30; i++) {
       galleryHTML += `
         <div class="col-md-4 mb-4">
           <div class="plant-item">

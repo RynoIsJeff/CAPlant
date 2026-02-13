@@ -1,7 +1,16 @@
-@import 'mixins';
-@import 'variables';
-@import 'typography';
-@import 'common';
-@import 'buttons';
-@import 'templates/navigation';
-@import 'templates/main';
+// Forward variables and mixins to all files
+@forward 'variables';
+@forward 'mixins';
+
+// Use variables and mixins (as * for backward compatibility)
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Import other files
+@use 'typography';
+@use 'common';
+@use 'buttons';
+@use 'breadcrumbs';
+@use 'templates/navigation';
+@use 'templates/main';
+@use 'inline-styles';

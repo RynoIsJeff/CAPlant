@@ -1,24 +1,33 @@
 {
   "name": "caplant",
   "version": "2.0.0",
-  "description": "CAPlant Website",
-  "author": "Themefisher",
+  "description": "Civils Agri Plant Website",
+  "author": "Ultimate Marketing Smash",
   "license": "MIT",
   "scripts": {
     "dev": "gulp",
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:prod": "gulp build:prod",
+    "lint": "eslint source/js/*.js",
+    "format": "prettier --write \"**/*.{js,json,scss,css,html,md}\""
   },
   "dependencies": {
-    "browser-sync": "^2.27.10",
+    "browser-sync": "^2.29.3",
     "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-header-comment": "^0.10.0",
-    "gulp-rimraf": "^1.0.0",
-    "gulp-sourcemaps": "^3.0.0"
+    "gulp-autoprefixer": "^9.0.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "through2": "^4.0.2"
   },
   "devDependencies": {
+    "eslint": "^9.15.0",
+    "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-rename": "^2.0.0",
+    "gulp-replace": "^1.1.4",
     "gulp-sass": "^6.0.0",
+    "gulp-terser": "^2.1.0",
+    "prettier": "^3.2.5",
     "sass": "^1.83.4"
   }
 }

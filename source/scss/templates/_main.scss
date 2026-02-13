@@ -1,3 +1,7 @@
+@use 'sass:color';
+@use 'variables' as *;
+@use 'mixins' as *;
+
 /* Table of Content
 ==================================================
 1.    Slider
@@ -144,7 +148,7 @@
   opacity: 0;
   filter: alpha(opacity=0);
   text-shadow: none;
-  transition: all 0.25s ease;
+  transition: all $transition-fast;
   padding: 0;
   outline: 0;
   border: 0;
@@ -174,7 +178,6 @@
 }
 
 .banner-carousel:hover .carousel-control,
-.banner-carousel:hover .carousel-control,
 .banner-carousel:hover .slick-dots {
   opacity: 1;
   filter: alpha(opacity=100);
@@ -196,7 +199,7 @@
   height: 60px;
   font-size: 22px;
   border-radius: 0;
-  transition: all 500ms ease;
+  transition: all $transition-slow ease;
 }
 
 .banner-carousel .carousel-control i:hover {
@@ -350,7 +353,7 @@
   margin: 0 1px 20px;
   padding: 0 20px;
   border: 0 !important;
-  transition: all 300ms ease;
+  transition: all $transition-base;
 }
 
 .featured-tab .tab-content {
@@ -424,33 +427,6 @@
   margin-bottom: 20px;
 }
 
-/* Facts
-================================================== */
-
-.facts-wrapper {
-  text-align: center;
-}
-
-.facts-wrapper .ts-facts {
-  color: #fff;
-}
-
-.ts-facts .ts-facts-icon i {
-  font-size: 42px;
-  color: $color-primary;
-}
-
-.ts-facts .ts-facts-content .ts-facts-num {
-  color: #fff;
-  font-size: 44px;
-  margin: 30px 0 20px;
-}
-
-.ts-facts .ts-facts-content .ts-facts-title {
-  font-size: 16px;
-  color: $color-primary;
-  margin: 0;
-}
 
 /* Services
 ================================================== */
@@ -505,57 +481,6 @@
 .ts-service-box-bg h3 {
   color: #fff;
 }
-
-/* Service box 
-
-.ts-service-box .ts-service-icon i {
-  font-size: 24px;
-  float: left;
-  color: #fff;
-  background: $color-primary;
-  border-radius: 100%;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
-  text-align: center;
-}
-
-.ts-service-box .ts-service-box-content {
-  margin-left: 80px;
-  margin-bottom: 30px;
-}
-
-.tab-content .ts-service-box .ts-service-box-content {
-  margin-left: 90px;
-}
-
-.ts-service-box .ts-service-box-content h3 {
-  font-size: 18px;
-  margin-bottom: 15px;
-}
-
-.ts-service-box .ts-service-box-info {
-  margin-left: 90px;
-  margin-bottom: 40px;
-}
-
-.service-box-title {
-  font-size: 18px;
-  margin: 0 0 10px;
-}
-
-.service-box-title a {
-  color: #333;
-}
-
-.service-box-title a:hover {
-  color: $color-primary;
-}
-
-.service-center-img {
-  padding: 0 20px;
-}
-*/
 
 /* Icon squre */
 .ts-service-icon.icon-round i {
@@ -643,7 +568,7 @@
   height: 60px;
   line-height: 60px;
   text-align: center;
-  transition: all 0.3s;
+  transition: all $transition-base;
 }
 
 .ts-service-classic .ts-service-box-info {
@@ -671,7 +596,7 @@
     padding-top: 10px;
     font-weight: 700;
     text-transform: uppercase;
-    transition: all 0.3s;
+    transition: all $transition-base;
     cursor: pointer;
     margin: 0;
     &.active {
@@ -694,7 +619,7 @@
     overflow: hidden;
     img {
       transform: perspective(1px) scale3d(1.1, 1.1, 1);
-      transition: all 400ms;
+      transition: all $transition-slow;
     }
     &:hover img {
       transform: perspective(1px) scale3d(1.15, 1.15, 1);
@@ -709,7 +634,7 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.7);
-      transition: all 400ms;
+      transition: all $transition-slow;
     }
     &:hover:after {
       opacity: 1;
@@ -725,7 +650,7 @@
       color: #fff;
       opacity: 0;
       transform: perspective(1px) scale3d(0, 0, 0);
-      transition: all 400ms;
+      transition: all $transition-slow;
     }
     &:hover .gallery-popup .gallery-icon {
       opacity: 1;
@@ -745,7 +670,7 @@
     .project-item-info-content {
       opacity: 0;
       transform: perspective(1px) translate3d(0, 15px, 0);
-      transition: all 400ms;
+      transition: all $transition-slow;
 
       .project-item-title {
         font-size: 20px;
@@ -893,7 +818,7 @@
       font-weight: 700;
       background-color: #333;
       color: #fff;
-      transition: 0.3s;
+      transition: $transition-base;
     }
 
     &[aria-expanded="true"] {
@@ -926,87 +851,8 @@
 
 .clients-logo img {
   filter: grayscale(100%);
-  filter: gray;
 }
 
-/* Testimonial
-================================================== */
-.testimonial-area {
-  padding: 100px 0;
-  background-color: $color-primary;
-  background-image: url(../images/parallax2.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: 50% 50%;
-}
-
-.testimonial-area .border-title,
-.testimonial-area .border-sub-title {
-  color: #fff;
-}
-
-.quote-item .quote-text {
-  margin: 0 0 10px;
-  display: inline-block;
-  padding: 0 40px 30px 60px;
-  background-color: #fff;
-  position: relative;
-  font-size: 16px;
-  font-style: italic;
-  @include mobile {
-    padding: 0 40px 30px 50px;
-  }
-}
-
-.quote-item .quote-text:before {
-  content: "\f10d";
-  font-family: "Font Awesome 5 Free";
-  position: absolute;
-  font-size: 30px;
-  left: 0;
-  top: 0;
-  font-weight: 700;
-  color: #ffc009;
-}
-
-.testimonial-slide .slick-dots {
-  bottom: -35px;
-}
-
-img.testimonial-thumb {
-  max-width: 80px;
-  float: left;
-  margin-right: 20px;
-  border-radius: 5px;
-}
-
-.quote-item-info {
-  padding-top: 15px;
-  display: inline-block;
-}
-
-.quote-author {
-  font-size: 16px;
-  line-height: 18px;
-  margin: 0 0 2px;
-  font-weight: 700;
-  display: block;
-  color: $color-primary;
-}
-
-.quote-item-footer {
-  margin-top: 0;
-  margin-left: 60px;
-  @include mobile {
-    margin-left: 0;
-  }
-}
-
-/* Testimonial Border */
-
-.quote-item.quote-border .quote-text-border {
-  border: 1px solid $color-primary;
   padding: 20px;
   position: relative;
   line-height: 28px;
@@ -1091,74 +937,6 @@ img.testimonial-thumb {
   margin: 0;
 }
 
-/* Newsletter */
-
-.ts-newsletter {
-  background: #252525;
-  position: relative;
-  min-height: 115px;
-  padding: 15px 0 0 50px;
-  @include tablet {
-    padding-top: 20px;
-    padding-bottom: 10px;
-  }
-  @include mobile {
-    padding: 30px 5px 15px 5px;
-    min-height: auto;
-    text-align: center;
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    background: #252525;
-    display: block;
-    width: 100%;
-    height: 100%;
-    right: -100%;
-    top: 0;
-  }
-}
-.newsletter-form input {
-  background: none;
-  font-size: 12px;
-  height: 45px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-/* News section
-================================================== */
-
-.latest-post {
-  position: relative;
-}
-
-.latest-post .image-angle:before {
-  border-bottom: 20px solid #f9f9f9;
-}
-
-.latest-post .post-title {
-  font-size: 16px;
-  line-height: 24px;
-  margin: 0;
-  font-weight: 600;
-}
-
-.latest-post .post-title a {
-  color: #303030;
-}
-
-.latest-post .post-title a:hover {
-  color: $color-primary;
-}
-
-.latest-post-meta {
-  font-size: 13px;
-  text-transform: uppercase;
-}
-
-.latest-post .post-body {
-  padding: 20px 0 5px;
-}
 
 /* Footer
 ================================================== */
@@ -1218,14 +996,14 @@ img.testimonial-thumb {
 .footer-social ul li a i {
   font-size: 16px;
   color: #999;
-  transition: color 400ms ease-in-out;
+  transition: color $transition-slow;
   padding: 10px;
   display: inline-block; /* Keeps icons inline */
 }
 
 /* Change icon color on hover */
 .footer-social ul li a:hover i {
-  color: #75b555;
+  color: $color-primary;
 }
 
 /* Links */
@@ -1402,7 +1180,7 @@ img.testimonial-thumb {
     transform: translateY(-50%);
     background-color: transparent;
     text-shadow: none;
-    transition: all 0.25s ease;
+    transition: all $transition-fast;
     padding: 0;
     outline: 0;
     border: 0;
@@ -1422,7 +1200,7 @@ img.testimonial-thumb {
     height: 70px;
     font-size: 22px;
     border-radius: 0;
-    transition: all 500ms ease;
+    transition: all $transition-slow ease;
   }
   .carousel-control i:hover {
     background: $color-primary;
@@ -1470,7 +1248,7 @@ img.testimonial-thumb {
 }
 
 .partner-logo img {
-  transition: 350ms;
+  transition: $transition-fast;
   opacity: 0.6;
   filter: grayscale(100%);
 }
@@ -1491,116 +1269,6 @@ img.testimonial-thumb {
   border-right: 0;
 }
 
-/*-- Team page --*/
-.team-slide {
-  .slick-slide {
-    margin-left: 25px;
-    padding-bottom: 60px;
-  }
-  .slick-list {
-    margin-left: -25px;
-  }
-  .carousel-control {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    border: 0;
-    background-color: #ddd;
-    height: 37px;
-    width: 37px;
-    border-radius: 4px;
-    transition: 0.3s;
-    z-index: 6;
-    &:hover {
-      background-color: $color-primary;
-      color: #fff;
-    }
-    &.left {
-      transform: translateX(calc(-50% - 25px));
-    }
-    &.right {
-      transform: translateX(calc(-50% + 25px));
-    }
-    &.slick-disabled {
-      opacity: 0.4;
-      &:hover {
-        background-color: #ddd;
-        color: #000;
-      }
-    }
-  }
-}
-.ts-team-wrapper {
-  position: relative;
-  overflow: hidden;
-  .ts-team-content {
-    position: absolute;
-    top: 76%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: 15px 25px;
-    margin-top: 0;
-    color: #fff;
-    background: rgba(0, 0, 0, 0.5);
-    transition: 350ms;
-    @include desktop-lg {
-      top: 72%;
-    }
-    @include mobile {
-      text-align: center;
-    }
-  }
-  .ts-name {
-    font-size: 16px;
-    margin-top: 0;
-    margin-bottom: 3px;
-    line-height: normal;
-    color: $color-primary;
-  }
-  .ts-designation {
-    color: #fff;
-    font-size: 14px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-  .team-social-icons {
-    a i {
-      color: #fff;
-      margin-right: 8px;
-      text-align: center;
-      transition: 400ms;
-      &:hover {
-        color: $color-primary;
-      }
-    }
-  }
-  &:hover .ts-team-content {
-    top: 0;
-    padding-top: 50px;
-  }
-}
-
-/* Team Classic */
-.ts-team-content-classic {
-  margin-top: 15px;
-  .ts-name {
-    font-size: 16px;
-    margin-bottom: 5px;
-    color: #212121;
-  }
-  .ts-designation {
-    color: #888;
-    margin-bottom: 5px;
-    font-weight: 600;
-  }
-  .team-social-icons a i {
-    color: #999;
-  }
-  .team-social-icons a i:hover {
-    color: $color-primary;
-  }
-}
 
 /*-- Pricing table  --*/
 .ts-pricing-box {
@@ -1652,7 +1320,7 @@ img.testimonial-thumb {
 }
 /* Pricing featured */
 .ts-pricing-box.ts-pricing-featured .ts-pricing-header {
-  background: adjust-hue($color-primary, -7);
+  background: color.adjust($color-primary, $hue: -7deg);
 }
 
 /* Contact Us
@@ -1925,61 +1593,6 @@ label {
   margin-bottom: 30px;
 }
 
-.comments-list .comment.last {
-  border-bottom: 0;
-  padding-bottom: 0;
-  margin-bottom: 0;
-}
-
-.comments-list img.comment-avatar {
-  width: 84px;
-  height: 84px;
-  margin-right: 30px;
-  @include mobile {
-    width: 40px;
-    height: 40px;
-    margin-right: 25px;
-  }
-}
-
-.comments-list .comment-author {
-  margin-bottom: 0;
-  margin-top: 0;
-  font-weight: 600;
-  font-size: 16px;
-  color: #303030;
-}
-
-.comments-list .comment-date {
-  color: #959595;
-  margin-bottom: 5px;
-  font-size: 12px;
-  @include mobile {
-    float: none !important;
-    display: inline-block;
-  }
-}
-
-.comments-reply {
-  list-style: none;
-  margin: 0 0 0 70px;
-  @include tablet {
-    margin: 0;
-    padding: 0;
-  }
-}
-
-.comments-form {
-  margin-bottom: 0;
-}
-
-.comments-form .title-normal {
-  margin-bottom: 20px;
-}
-
-.comments-form .btn.btn-primary {
-  margin-top: 20px;
-}
 
 /* Sidebar
 ================================================== */
@@ -2093,7 +1706,7 @@ label {
       border: 0;
       margin-bottom: 8px;
       position: relative;
-      transition: 400ms;
+      transition: $transition-slow;
       display: block;
     }
     &.active a,
@@ -2105,46 +1718,6 @@ label {
   }
 }
 
-/* Recent News */
-.widget.recent-posts .widget-title {
-  margin-bottom: 35px;
-}
-
-.widget.recent-posts {
-  ul li {
-    border-bottom: 1px solid #dadada;
-    padding-bottom: 15px;
-    margin-bottom: 17px;
-    &:last-child {
-      border: 0;
-      padding-bottom: 0;
-      margin-bottom: 0;
-    }
-  }
-  .posts-thumb img {
-    margin-right: 15px;
-    width: 90px;
-    height: 70px;
-  }
-  .post-info .entry-title {
-    font-size: 13px;
-    font-weight: 600;
-    line-height: 20px;
-    margin: 0;
-    a {
-      color: #303030;
-      display: inline-block;
-      &:hover {
-        color: $color-primary;
-      }
-    }
-  }
-  .post-date {
-    font-weight: 400;
-    color: #999;
-    text-transform: capitalize;
-  }
-}
 
 /* Widget tags */
 .widget-tags ul > li {
@@ -2158,7 +1731,7 @@ label {
   display: block;
   font-size: 14px;
   padding: 3px 15px;
-  transition: all 0.3s ease 0s;
+  transition: all $transition-base;
 }
 
 .sidebar .widget-tags ul > li a:hover {

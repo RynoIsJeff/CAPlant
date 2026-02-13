@@ -193,55 +193,6 @@ jQuery(function ($) {
 		projectShuffle();
 
 
-		// testimonial carousel
-		function testimonialCarousel() {
-			$('.testimonial-slide').slick({
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				dots: true,
-				speed: 600,
-				arrows: false
-			});
-		}
-		testimonialCarousel();
-
-
-		// team carousel
-		function teamCarousel() {
-			$('.team-slide').slick({
-				dots: false,
-				infinite: false,
-				speed: 300,
-				slidesToShow: 4,
-				slidesToScroll: 2,
-				arrows: true,
-				prevArrow: '<button type="button" class="carousel-control left" aria-label="carousel-control"><i class="fas fa-chevron-left"></i></button>',
-				nextArrow: '<button type="button" class="carousel-control right" aria-label="carousel-control"><i class="fas fa-chevron-right"></i></button>',
-				responsive: [{
-						breakpoint: 992,
-						settings: {
-							slidesToShow: 3,
-							slidesToScroll: 3
-						}
-					},
-					{
-						breakpoint: 768,
-						settings: {
-							slidesToShow: 2,
-							slidesToScroll: 2
-						}
-					},
-					{
-						breakpoint: 481,
-						settings: {
-							slidesToShow: 1,
-							slidesToScroll: 1
-						}
-					}
-				]
-			});
-		}
-		teamCarousel();
 
 
 		// media popup
@@ -258,6 +209,116 @@ jQuery(function ($) {
 			});
 		}
 		mediaPopup();
+
+		// Contact form validation and submission
+		function contactFormHandler() {
+			var $form = $('#contact-form');
+			if ($form.length === 0) return;
+
+			var $errorContainer = $('.error-container');
+			var $successContainer = $('.success-container');
+			var $submitButton = $form.find('button[type="submit"]');
+			var $buttonText = $submitButton.find('.button-text');
+			var $buttonLoading = $submitButton.find('.button-loading');
+
+			function showError(message) {
+				$errorContainer.html('<div class="alert alert-danger" role="alert">' + message + '</div>');
+				$successContainer.html('');
+				$errorContainer.focus();
+			}
+
+			function showSuccess(message) {
+				$successContainer.html('<div class="alert alert-success" role="alert">' + message + '</div>');
+				$errorContainer.html('');
+				$form[0].reset();
+				$form.find('.error-message').text('');
+				$form.find('.form-control').removeClass('error');
+			}
+
+			function validateField($field) {
+				var value = $field.val().trim();
+				var isValid = true;
+				var errorMessage = '';
+
+				if ($field.prop('required') && !value) {
+					isValid = false;
+					errorMessage = 'This field is required.';
+				} else if ($field.attr('type') === 'email' && value) {
+					var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+					if (!emailRegex.test(value)) {
+						isValid = false;
+						errorMessage = 'Please enter a valid email address.';
+					}
+				}
+
+				var $errorSpan = $('#' + $field.attr('aria-describedby'));
+				if ($errorSpan.length) {
+					$errorSpan.text(errorMessage);
+				}
+
+				if (isValid) {
+					$field.removeClass('error');
+				} else {
+					$field.addClass('error');
+				}
+
+				return isValid;
+			}
+
+			// Real-time validation
+			$form.find('input, textarea').on('blur', function() {
+				validateField($(this));
+			});
+
+			$form.on('submit', function(e) {
+				e.preventDefault();
+
+				var isValid = true;
+				$form.find('input[required], textarea[required]').each(function() {
+					if (!validateField($(this))) {
+						isValid = false;
+					}
+				});
+
+				if (!isValid) {
+					showError('Please correct the errors in the form.');
+					$form.find('.error').first().focus();
+					return false;
+				}
+
+				// Disable submit button and show loading state
+				$submitButton.prop('disabled', true);
+				$buttonText.hide();
+				$buttonLoading.show();
+
+				// Submit form via AJAX
+				$.ajax({
+					url: $form.attr('action'),
+					method: 'POST',
+					data: $form.serialize(),
+					dataType: 'json',
+					success: function(response) {
+						showSuccess('Thank you! Your message has been sent successfully. We will get back to you soon.');
+						$submitButton.prop('disabled', false);
+						$buttonText.show();
+						$buttonLoading.hide();
+					},
+					error: function(xhr) {
+						var errorMsg = 'Sorry, there was an error sending your message. Please try again or contact us directly.';
+						if (xhr.responseJSON && xhr.responseJSON.error) {
+							errorMsg = xhr.responseJSON.error;
+						}
+						showError(errorMsg);
+						$submitButton.prop('disabled', false);
+						$buttonText.show();
+						$buttonLoading.hide();
+					}
+				});
+
+				return false;
+			});
+		}
+		contactFormHandler();
 
 	});
 
