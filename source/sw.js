@@ -1,5 +1,5 @@
 // Service Worker for Civils Agri Plant
-const CACHE_NAME = 'caplant-v2.0.0';
+const CACHE_NAME = 'caplant-v2.0.1';
 const urlsToCache = [
   '/',
   '/index.html',
@@ -40,18 +40,21 @@ self.addEventListener('install', function(event) {
 
 // Fetch event - serve from cache, fallback to network
 self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    caches.match(event.request)
-      .then(function(response) {
-        // Return cached version or fetch from network
-        if (response) {
-          return response;
-        }
-        return fetch(event.request).catch(function(error) {
-          // If fetch fails, return a basic response to prevent errors
-          console.log('Fetch failed for:', event.request.url, error);
-          // For navigation requests, return a basic HTML response
-          if (event.request.mode === 'navigate') {
+  // Always prefer fresh HTML from network for page navigations.
+  if (event.request.mode === 'navigate') {
+    event.respondWith(
+      fetch(event.request)
+        .then(function(networkResponse) {
+          return caches.open(CACHE_NAME).then(function(cache) {
+            cache.put(event.request, networkResponse.clone());
+            return networkResponse;
+          });
+        })
+        .catch(function() {
+          return caches.match(event.request).then(function(cachedResponse) {
+            if (cachedResponse) {
+              return cachedResponse;
+            }
             return new Response('Offline', {
               status: 503,
               statusText: 'Service Unavailable',
@@ -59,8 +62,21 @@ self.addEventListener('fetch', function(event) {
                 'Content-Type': 'text/html'
               })
             });
-          }
-          // For other requests, return a basic error response
+          });
+        })
+    );
+    return;
+  }
+
+  // Cache-first for non-navigation requests (assets).
+  event.respondWith(
+    caches.match(event.request)
+      .then(function(response) {
+        if (response) {
+          return response;
+        }
+        return fetch(event.request).catch(function(error) {
+          console.log('Fetch failed for:', event.request.url, error);
           return new Response('Network error', {
             status: 408,
             statusText: 'Request Timeout'
