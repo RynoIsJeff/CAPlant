@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Updated package.json author to "Ultimate Marketing Smash"
 - Removed unused dependencies (gulp-header-comment)
 - Added defer attributes to all JavaScript files for better performance
-- Updated all email addresses from info@caplant.co.za to phia@caplant.co.za
+- Updated all email addresses to info@caplant.co.za
 - Changed all public-facing "CAPlant" references to "Civils Agri Plant"
 
 ### Removed
